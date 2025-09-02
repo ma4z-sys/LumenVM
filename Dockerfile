@@ -19,7 +19,6 @@ RUN wget -O ubuntu-22.qcow2.gz "https://github.com/ma4z-sys/LumenVM/releases/dow
 VOLUME ["$HOME/data"]
 EXPOSE $SERVER_PORT
 CMD ["sh", "-c", "qemu-system-x86_64 \
-    -enable-kvm -cpu host \
     -hda ubuntu-22.qcow2 \
     -m ${SERVER_MEMORY} \
     -net user,hostfwd=tcp::${SERVER_PORT}-:22 \
