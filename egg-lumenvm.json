@@ -1,0 +1,19 @@
+{
+  "Image": "ghcr.io/ma4z-sys/lumenvm:ubuntu-22",
+  "Cmd": "",
+  "Env": [
+    "START=#Thanks for using LumenVM (but better)"
+  ],
+  "StopCommand": "exit",
+  "Scripts": {
+    "Install": []
+  },
+  "Variables": {},
+  "Name": "LumenVM",
+  "Description": "yk lumenvm but this ones better and free.",
+  "Author": "ma4z.dev@gmail.com",
+  "AuthorName": "Ma4z",
+  "Meta": {
+    "Version": "LumenVM-but-free v1"
+  }
+}
