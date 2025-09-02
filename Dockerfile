@@ -19,7 +19,7 @@ WORKDIR $HOME
 VOLUME ["$HOME/data"]
 EXPOSE $SERVER_PORT
 CMD ["sh", "-c", "qemu-system-x86_64 \
-    -hda jammy-server-cloudimg-amd64.img \
+    -hda jammy-server-cloudimg-arm64.img \
     -m ${SERVER_MEMORY} \
     -net user,hostfwd=tcp::${SERVER_PORT}-:22 \
     -net nic \
