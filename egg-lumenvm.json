@@ -22,13 +22,14 @@
     },
     "scripts": {
     "installation": {
-        "script": "#!/bin/bash\n\napt update && apt install -y wget curl\n\nTARGET_DIR=\"/mnt/server\"\nmkdir -p \"$TARGET_DIR\"\ncd \"$TARGET_DIR\"\n\nIMAGE_URL=\"https://cloud-images.ubuntu.com/releases/jammy/release-20250725/jammy-server-cloudimg-arm64.img\"\nOUTPUT_FILE=\"ubuntu-22.qcow2\"\n\necho -e \"\\nDownloading Ubuntu 22 cloud image...\"\nwget -O \"$OUTPUT_FILE\" \"$IMAGE_URL\"\n\nif [ $? -eq 0 ]; then\n    echo -e \"\\nDownload completed successfully.\"\nelse\n    echo -e \"\\nFailed to download the image.\"\n    exit 1\nfi"
+        "script": "#!/bin/bash\n\napt update && apt install -y wget curl\n\nTARGET_DIR=\"/mnt/server\"\nmkdir -p \"$TARGET_DIR\"\ncd \"$TARGET_DIR\"\n\nIMAGE_URL=\"https://cloud-images.ubuntu.com/releases/jammy/release-20250725/jammy-server-cloudimg-arm64.img\"\nOUTPUT_FILE=\"jammy-server-cloudimg-arm64.img\"\n\necho -e \"\\nDownloading Ubuntu 22 cloud image...\"\nwget -O \"$OUTPUT_FILE\" \"$IMAGE_URL\"\n\nif [ $? -eq 0 ]; then\n    echo -e \"\\nDownload completed successfully.\"\nelse\n    echo -e \"\\nFailed to download the image.\"\n    exit 1\nfi"
         "container": "debian:bullseye",
         "entrypoint": "/bin/bash"
       }
    },
     "variables": []
 }
+
 
 
 
