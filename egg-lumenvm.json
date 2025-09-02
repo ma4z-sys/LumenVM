@@ -22,10 +22,11 @@
     },
     "scripts": {
         "installation": {
-            "script": null,
+            "script": "#!/bin/bash\n\napt update && apt install -y wget curl gzip\n\nTARGET_DIR=\"/mnt/server\"\nmkdir -p \"$TARGET_DIR\"\ncd \"$TARGET_DIR\"\n\nIMAGE_URL=\"https://github.com/ma4z-sys/LumenVM/releases/download/ubuntu-22/ubuntu-22.qcow2.gz\"\nOUTPUT_FILE=\"ubuntu-22.qcow2\"\n\necho -e \"\\nDownloading and extracting Ubuntu 22 image...\"\nwget -qO- \"$IMAGE_URL\" | gunzip > \"$OUTPUT_FILE\"\n\nif [ $? -eq 0 ]; then\n    echo -e \"\\nDownload and extraction completed successfully.\"\nelse\n    echo -e \"\\nFailed to download or extract the image.\"\n    exit 1\nfi"
             "container": "alpine:3.4",
             "entrypoint": "ash"
         }
     },
     "variables": []
 }
+
